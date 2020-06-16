@@ -1,4 +1,8 @@
-public class ArrayTraining {
+
+ public class ArrayTraining {
+
+      
+
 
     /**
      * @param n size of the array, eg: 3
@@ -6,7 +10,7 @@ public class ArrayTraining {
      */
     public int[] emptyIntArray(int n) {
 
-        return null;
+        return new int[n];
     }
 
     /**
@@ -15,7 +19,7 @@ public class ArrayTraining {
      */
     public String[] emptyStringArray(int n) {
 
-        return null;
+        return new String[n];
     }
 
     /**
@@ -25,8 +29,8 @@ public class ArrayTraining {
      * @return an int array with a, b and c values, eg: {3, 2, 1}
      */
     public int[] intArray(int a, int b, int c) {
-
-        return null;
+        
+        return new int[]{a,b,c};
     }
 
     /**
@@ -38,7 +42,7 @@ public class ArrayTraining {
      */
     public String[] stringArray(String a, String b, String c) {
 
-        return null;
+        return new String[]{a,b,c};
     }
 
     /**
@@ -47,7 +51,7 @@ public class ArrayTraining {
      */
     public int length(int[] array) {
 
-        return 0;
+        return array.length;
     }
 
     /**
@@ -56,7 +60,7 @@ public class ArrayTraining {
      */
     public int firstValue(int[] array) {
 
-        return 0;
+        return array[0];
     }
 
     /**
@@ -65,7 +69,7 @@ public class ArrayTraining {
      */
     public int lastValue(int[] array) {
 
-        return 0;
+        return array[array.length-1];
     }
 
     /**
@@ -75,7 +79,7 @@ public class ArrayTraining {
      */
     public int valueAtPosition(int[] array, int position) {
 
-        return 0;
+        return array[position];
     }
 
     /**
@@ -85,8 +89,8 @@ public class ArrayTraining {
      * @return the array with the value replaced at position, eg: {3, 4, 5}
      */
     public int[] replace(int[] array, int value, int position) {
-
-        return null;
+        array[position]=value;
+        return array;
     }
 
     /**
@@ -94,8 +98,11 @@ public class ArrayTraining {
      * @return sum of values of the array, eg: 6
      */
     public int sum(int[] array) {
-
-        return 0;
+        int n=0;
+        for(int e:array){
+            n+=e;
+        }
+        return n;
     }
 
     /**
@@ -104,7 +111,11 @@ public class ArrayTraining {
      * @return if array contains searched value, eg: true
      */
     public boolean contains(int[] array, int search) {
-
+        for(int e:array){
+            if(e==search){
+                return true;
+            }
+        }
         return false;
     }
 
@@ -113,8 +124,10 @@ public class ArrayTraining {
      * @return array where all words are capitalized, eg: {"Sample", "Value"}
      */
     public String[] capitalize(String[] array) {
-
-        return null;
+        for(int i=0; i<array.length; i++){
+            array[i]=StringTraining.capitalize(array[i]);
+        }
+        return array;
     }
 
     /**
@@ -124,17 +137,33 @@ public class ArrayTraining {
      * are equals, eg: false
      */
     public boolean equals(int[] first, int[] second) {
-
-        return false;
+        if (first.length != second.length)
+        {
+            return false;
+        }
+        for(int i=0; i<first.length; i++){
+             if(first[i]!=second[i]){
+                 return false;
+             }
+        }
+        return true;
     }
-
+   
     /**
      * @param array, eg: {1, 2, 3}
      * @return array with reversed values, eg: {3, 2, 1}
      */
     public int[] reverse(int[] array) {
-
-        return null;
+        int n=array.length;
+        int[] array2 = new int[n];
+        array2 = array;
+        
+        for(int i=0;i<n;i++){
+            array2[n-i]=array[i];// pour moi cette ligne est fausse
+           // array2[n-1-i]=array[i];// et celle la est juste
+        }
+        return array2;
+       
     }
 
     /**
@@ -144,7 +173,16 @@ public class ArrayTraining {
      * eg: {1, 2, 3, 4, 5}
      */
     public int[] concat(int[] first, int[] second) {
-
-        return null;
+        int m=first.length;
+        int n=second.length;
+        int l=m+n;
+        int[] array3 = new int[n]; 
+        for (int i=0; i<m;i++){
+            array3[i]=first[i];
+        }
+        for (int i=0; i<n;i++){
+            array3[m+i]=second[i];
+        }
+        return array3;
     }
 }
