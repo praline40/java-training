@@ -5,7 +5,11 @@ public class LoopTraining {
      * @return the sum of the values, eg: 6
      */
     public static int sum(int[] values) {
-        return 0;
+        int n=0;
+        for (int v : values) {
+            n+=v;
+        }
+        return n;
     }
 
     /**
@@ -13,7 +17,11 @@ public class LoopTraining {
      * @return the concatenation of all values values, eg: "abc"
      */
     public static String concat(String[] values) {
-        return "";
+        String ss="";
+        for (String s : values) {
+            ss+=s;
+        }
+        return ss;
     }
 
     /**
@@ -21,6 +29,11 @@ public class LoopTraining {
      * @return if the array contains an even value, eg: false
      */
     public static boolean hasEven(int[] values) {
+        for (int v : values) {
+            if (v%2==0){
+                return true;
+            }
+        }
         return false;
     }
 
@@ -30,7 +43,13 @@ public class LoopTraining {
      * @return the index of the searched value or -1 if the value isn't present, eg: 1
      */
     public static int indexOf(int[] values, int search) {
-        return 0;
+        for(int i=0; i<values.length; i++){
+            if (values[i]==search){
+                return i;
+                 
+            }
+        }
+        return -1;
     }
 
     /**
@@ -39,7 +58,13 @@ public class LoopTraining {
      * @return how many times the searched value occurred, eg: 2
      */
     public static int count(int[] values, int search) {
-        return 0;
+        int n=0;
+        for(int i=0; i<values.length; i++){
+            if (values[i]==search){
+                n++;
+            }
+        }
+        return n;
     }
 
     /**
@@ -48,6 +73,9 @@ public class LoopTraining {
      * @return add the increment to each value of the array, eg: {3, 4, 5}
      */
     public static int[] incrementEach(int[] values, int increment) {
-        return null;
+        for (int i=0; i<values.length; i++) {
+            values[i]+=increment;            
+        }
+        return values;
     }
 }
