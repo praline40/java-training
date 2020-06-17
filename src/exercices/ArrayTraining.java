@@ -2,9 +2,7 @@
  public class ArrayTraining {
 
       
-
-
-    /**
+ /**
      * @param n size of the array, eg: 3
      * @return an empty int array of size n, eg: {0, 0, 0}
      */
@@ -97,7 +95,7 @@
      * @param array, eg: {1, 2, 3}
      * @return sum of values of the array, eg: 6
      */
-    public int sum(int[] array) {
+    public static int sum(int[] array) {
         int n=0;
         for(int e:array){
             n+=e;
@@ -110,7 +108,7 @@
      * @param search, eg: 2
      * @return if array contains searched value, eg: true
      */
-    public boolean contains(int[] array, int search) {
+    public static boolean contains(int[] array, int search) {
         for(int e:array){
             if(e==search){
                 return true;
@@ -155,12 +153,12 @@
      */
     public int[] reverse(int[] array) {
         int n=array.length;
+         
         int[] array2 = new int[n];
-        array2 = array;
         
         for(int i=0;i<n;i++){
-            array2[n-i]=array[i];// pour moi cette ligne est fausse
-           // array2[n-1-i]=array[i];// et celle la est juste
+           //array2[n-i]=array[i];// pour moi cette ligne est fausse
+           array2[n-1-i]=array[i];// et celle la est juste
         }
         return array2;
        
@@ -176,7 +174,7 @@
         int m=first.length;
         int n=second.length;
         int l=m+n;
-        int[] array3 = new int[n]; 
+        int[] array3 = new int[l]; 
         for (int i=0; i<m;i++){
             array3[i]=first[i];
         }
